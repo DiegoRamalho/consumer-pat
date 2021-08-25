@@ -25,3 +25,9 @@ necessárias. Ao fim, commit e no envie um Pull Request.
 Banco de Dados da API: http://localhost:8080/h2-console/ <br/></p>
 
 ***Atenção: Não inclua nenhuma lib ou framework***  
+
+### Melhorias futuras
+Incluir sistema de autenticação (usando [Spring Security](https://spring.io/projects/spring-security) e [JWT](https://jwt.io/))
+Melhoria na rastreabilidade (usando [Spring Sleuth](https://spring.io/projects/spring-cloud-sleuth) e [Logbook](https://github.com/zalando/logbook))
+Utilizar o [MapStruct](https://mapstruct.org/)
+Testes de performance

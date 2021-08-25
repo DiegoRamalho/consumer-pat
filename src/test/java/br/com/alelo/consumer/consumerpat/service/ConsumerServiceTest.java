@@ -6,7 +6,7 @@ import br.com.alelo.consumer.consumerpat.entity.Consumer;
 import br.com.alelo.consumer.consumerpat.exception.NotFoundException;
 import br.com.alelo.consumer.consumerpat.mapper.ConsumerMapper;
 import br.com.alelo.consumer.consumerpat.respository.ConsumerRepository;
-import br.com.alelo.consumer.consumerpat.util.Constants;
+import br.com.alelo.consumer.consumerpat.core.util.Constants;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
 
@@ -14,10 +14,10 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static br.com.alelo.consumer.consumerpat.builder.ConsumerBuilder.consumerWith2Cards;
-import static br.com.alelo.consumer.consumerpat.builder.ConsumerBuilder.emptyConsumer;
-import static br.com.alelo.consumer.consumerpat.builder.CreateConsumerBuilder.fullCreateConsumerDTO;
-import static br.com.alelo.consumer.consumerpat.builder.UpdateConsumerBuilder.fullUpdateConsumerDTO;
+import static br.com.alelo.consumer.consumerpat.core.builder.ConsumerBuilder.consumerWith2Cards;
+import static br.com.alelo.consumer.consumerpat.core.builder.ConsumerBuilder.emptyConsumer;
+import static br.com.alelo.consumer.consumerpat.entrypoint.http.builder.CreateConsumerBuilder.fullCreateConsumerDTO;
+import static br.com.alelo.consumer.consumerpat.entrypoint.http.builder.UpdateConsumerBuilder.fullUpdateConsumerDTO;
 import static java.util.Objects.nonNull;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;

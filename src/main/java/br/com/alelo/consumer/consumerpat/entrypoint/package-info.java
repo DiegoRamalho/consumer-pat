@@ -1,0 +1,1 @@
+package br.com.alelo.consumer.consumerpat.entrypoint;

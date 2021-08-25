@@ -9,8 +9,8 @@ import org.mockito.Mock;
 
 import java.math.BigDecimal;
 
-import static br.com.alelo.consumer.consumerpat.builder.CardBuilder.emptyCard;
-import static br.com.alelo.consumer.consumerpat.builder.TransactionBuilder.fullTransactionDTO;
+import static br.com.alelo.consumer.consumerpat.core.builder.CardBuilder.emptyCard;
+import static br.com.alelo.consumer.consumerpat.entrypoint.http.builder.CreateTransactionBuilder.fullTransactionDTO;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;

@@ -1,12 +1,13 @@
 package br.com.alelo.consumer.consumerpat.service;
 
 import br.com.alelo.consumer.consumerpat.BaseMockitoTest;
+import br.com.alelo.consumer.consumerpat.core.usecase.transaction.operation.TransactionOperationStrategy;
 import br.com.alelo.consumer.consumerpat.dto.IncreaseCardBalanceDTO;
-import br.com.alelo.consumer.consumerpat.dto.TransactionDTO;
+import br.com.alelo.consumer.consumerpat.entrypoint.http.request.CreateTransactionHttpRequest;
 import br.com.alelo.consumer.consumerpat.entity.Card;
 import br.com.alelo.consumer.consumerpat.exception.NotFoundException;
 import br.com.alelo.consumer.consumerpat.respository.CardRepository;
-import br.com.alelo.consumer.consumerpat.util.Constants;
+import br.com.alelo.consumer.consumerpat.core.util.Constants;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
@@ -16,10 +17,9 @@ import org.mockito.Mock;
 import java.math.BigDecimal;
 import java.util.Optional;
 
-import static br.com.alelo.consumer.consumerpat.builder.CardBuilder.foodCard;
-import static br.com.alelo.consumer.consumerpat.builder.IncreaseCardBalanceBuilder.fullIncreaseCardBalanceDTO;
-import static br.com.alelo.consumer.consumerpat.builder.TransactionBuilder.fullTransactionDTO;
-import static org.junit.jupiter.api.Assertions.*;
+import static br.com.alelo.consumer.consumerpat.core.builder.CardBuilder.foodCard;
+import static br.com.alelo.consumer.consumerpat.entrypoint.http.builder.IncreaseCardBalanceBuilder.fullIncreaseCardBalanceDTO;
+import static br.com.alelo.consumer.consumerpat.entrypoint.http.builder.CreateTransactionBuilder.fullTransactionDTO;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -64,7 +64,7 @@ class CardServiceTest extends BaseMockitoTest {
 
     @Test
     public void shouldProcess() {
-        TransactionDTO request = fullTransactionDTO();
+        CreateTransactionHttpRequest request = fullTransactionDTO();
         final Card bdCard = foodCard();
         when(cardRepository.findOneByNumber(request.getCardNumber())).thenReturn(Optional.of(bdCard));
 
